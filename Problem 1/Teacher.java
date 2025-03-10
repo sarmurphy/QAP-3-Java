@@ -1,3 +1,5 @@
+import java.text.NumberFormat;
+
 public class Teacher extends Person {
     private String subject;
     private double salary;
@@ -28,6 +30,9 @@ public class Teacher extends Person {
 
     // toString method to format output
     public String toString() {
-        return super.toString() + ", subject: " + subject + ", salary" + salary;
+
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+
+        return super.toString() + ", subject: " + subject + ", salary: " + currencyFormat.format(salary);
     }
 }
